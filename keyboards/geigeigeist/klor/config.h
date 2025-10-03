@@ -2,16 +2,18 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
 
-#ifdef POINTING_DEVICE_ENABLE
-#    define POINTING_DEVICE_SCLK_PIN D0
-#    define POINTING_DEVICE_SDIO_PIN D1
-#endif
-
-#ifdef AUDIO_ENABLE
-#    define AUDIO_PIN B5
-#endif
+#define MASTER_RIGHT
+#define OLED_TIMEOUT 5000
+#define SPLIT_ACTIVITY_ENABLE
+#define OLED_UPDATE_INTERVAL 100
+// #define OLED_BRIGHTNESS 128
 
 #ifdef OLED_ENABLE
-#    define OLED_DISPLAY_128X64
-#    define OLED_FONT_H "keyboards/geigeigeist/klor/glcdfont.c"
+    #define OLED_DISPLAY_128X64
+    #define OLED_FONT_H "keyboards/geigeigeist/klor/glcdfont.c"
 #endif
+
+// Needed for OLED display
+#define I2C_DRIVER    I2CD1
+#define I2C1_SDA_PIN  D0
+#define I2C1_SCL_PIN  D1
